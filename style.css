@@ -1,0 +1,10 @@
+#digits-input{
+  border: 1px solid;
+  text-align: right;
+}
+
+table.td {
+  border-left:last-child;
+
+}
+
