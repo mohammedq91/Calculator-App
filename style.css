@@ -1,5 +1,5 @@
-div{
-  border: 1px solid;
+.calculator{
+  border: 2px solid;
   border-radius: 0.25rem;
   width: 120px;
 }
@@ -11,7 +11,7 @@ div{
   border-radius: 0.1rem;
 }
 
-#digitsInput{
+#digitsDisplay{
   border-radius: 0.25rem;
   text-align: right;
   width: 111.5px;
@@ -35,7 +35,13 @@ table{
 }
  */
 
-.buttons{
+.operationalButtons{
+  width: 22px;
+  text-align: center;
+  
+}
+
+.nonOperationalButtons{
   width: 22px;
   text-align: center;
   
