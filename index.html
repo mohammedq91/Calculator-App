@@ -10,55 +10,55 @@
 
 
 <body>
+  <div>
+    <form>
+      <button id="clearButton">CE</button>
+      <input id= "digitsInput"  type="number" min="0" placeholder ="0"> 
+    </form>
 
-  <form id = "input-numbers">
-    <button>CE</button>
-    <input id= "digits-input"  type="number" placeholder ="0" > 
-  </form>
+    <table id="non-operationsButtons">
+      <tbody >
+        <tr>
+          <td><button>7</button></td>
+          <td><button>8</button></td>
+          <td><button>9</button></td>
+        </tr>
+        <tr>
+          <td><button>4</button></td>
+          <td><button>5</button></td>
+          <td><button>6</button></td>
 
-  
+        </tr>
+        <tr>
+          <td><button>1</button></td>
+          <td><button>2</button></td>
+          <td><button>3</button></td>
+        </tr>
+        <tr>
+          <td><button>0</button></td>
+          <td><button>.</button></td>
+          <td width="30"><button>=</button></td>
+        </tr>
+      </tbody>
+    </table>
 
-
-  <table>
-    <tbody>
-
-      
-      <tr>
-        <td><button>7</button></td>
-        <td><button>8</button></td>
-        <td><button>9</button></td>
-        <td><button>/</button></td>
-      </tr>
-      <tr>
-        <td><button>4</button></td>
-        <td><button>5</button></td>
-        <td><button>6</button></td>
-        <td><button>x</button></td>
-
-      </tr>
-      <tr>
-        <td><button>1</button></td>
-        <td><button>2</button></td>
-        <td><button>3</button></td>
-        <td><button>-</button></td>
-
-      </tr>
-      <div id= "operations">
-      <tr>
-        <td><button>0</button></td>
-        <td><button>.</button></td>
-        <td><button>=</button></td>
-        <td><button>+</button></td>
-      </tr>
-      </div>
-    </tbody>
-
-
-
-  </table>
-  
-
-
+    <table >
+      <tbody id="operationsButtons">
+        <tr>
+          <td><button>/</button></td>
+        </tr>
+        <tr>
+          <td><button>x</button></td>
+        </tr>
+        <tr>
+          <td><button>-</button></td>
+        </tr>
+        <tr>
+          <td><button>+</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <script src = "script.js"></script>
 </body>
