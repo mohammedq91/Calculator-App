@@ -4,14 +4,14 @@
   width: 120px;
 }
 
-#clearButton{
+#clear{
   position: absolute;
   height: 21px;
   border-top: 0px;
   border-radius: 0.1rem;
 }
 
-#digitsDisplay{
+#inputDisplay{
   border-radius: 0.25rem;
   text-align: right;
   width: 111.5px;
@@ -35,13 +35,13 @@ table{
 }
  */
 
-.operationalButtons{
+.operator{
   width: 22px;
   text-align: center;
   
 }
 
-.nonOperationalButtons{
+.number{
   width: 22px;
   text-align: center;
   
