@@ -11,14 +11,14 @@ function reset(e){
 }
 
 for (let i=0; i < numbers.length; i++){
-  const button = numbers[i];
-  button.addEventListener('click', function(e) {
+  const number = numbers[i];
+  number.addEventListener('click', function(e) {
     e.preventDefault();
-    inputDisplay.value = button.textContent;
+    inputDisplay.value = number.textContent;
   });
 
   function add(){
-    inputDisplay.value= button.textContent 
+    inputDisplay.value= number.textContent 
   }    
   add();
 
