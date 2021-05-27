@@ -8,6 +8,9 @@ let firstOperand = '';
 let secondOperand = '';
 let operatorValue = '';
 
+
+var sum;
+
 function reset(e){
   e.preventDefault();
   inputDisplay.value ="0"
@@ -42,17 +45,28 @@ for (let i=0; i < operators.length; i++){
       console.log('operator: ', operatorValue)
       inputDisplay.value = operator.textContent
     }
-    
   })
 }
 
 
 function calculate(firstOperand, operator, secondOperand){
-  switch (firstOperand) {
+  const add;
+  switch (firstOperand, secondOperand) {
     case add:
-      return firstOperand + SecondOperand;
+      if (operator === add)
+      return add = firstOperand + secondOperand;
+      console.log(firstOperand+secondOperand)
+      inputDisplay.value = add.textContent
+
+
+  // switch (key) {
+  //   case value:
+  // }
   };
 };
+calculate(add)
+
+
 
 
 
