@@ -11,7 +11,7 @@
   border-radius: 0.1rem;
 }
 
-#inputDisplay{
+#display{
   border-radius: 0.25rem;
   text-align: right;
   width: 111.5px;
@@ -38,7 +38,11 @@ table{
 .operator{
   width: 22px;
   text-align: center;
-  
+}
+
+.equals{
+  width: 22px;
+  text-align: center;
 }
 
 .number{
