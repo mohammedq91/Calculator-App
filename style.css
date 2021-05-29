@@ -4,7 +4,7 @@
   width: 120px;
 }
 
-#clear{
+#clearBtn{
   position: absolute;
   height: 21px;
   border-top: 0px;
@@ -18,22 +18,10 @@
 
 }
 
-table{
+#buttons{
   display: inline;
   text-align: center;
-  /* border-radius: 0.08rem;
-  border: 1px solid; */
 }
-
-/* #non-operationsButtons{
-  text-align: center;
-}
-
-
-#operationsButtons{
-  text-align: center;
-}
- */
 
 .operator{
   width: 22px;

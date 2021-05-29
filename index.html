@@ -7,16 +7,15 @@
   <title>Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
+
   <div class ="calculator">
     <form>
-      <button id="clear">CE</button>
-      <input id= "display" placeholder ="0" min="100000" >
+      <button id="clearBtn">CE</button>
+      <input id= "display"  min="100000" >
     </form>
 
-    <table id="non-operationalButtons">
+    <table id="buttons">
       <tbody >
         <tr>
           <td><button class = "number">7</button></td>
@@ -42,7 +41,7 @@
       </tbody>
     </table>
 
-    <table id="operationalButtons">
+    <table id="buttons">
       <tbody >
         <tr>
           <td><button class = "operator">/</button></td>
@@ -60,7 +59,9 @@
     </table>
 
   </div>
-
   <script src = "calculator.js"></script>
+
 </body>
+
+
 </html>
