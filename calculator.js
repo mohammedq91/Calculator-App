@@ -10,10 +10,12 @@ let firstOperand = '';
 let secondOperand = '';
 let operatorValue = '';
 
-
 function reset(e){
   e.preventDefault();
   display.value ="0"
+  firstOperand = '';
+  secondOperand = '';
+  operatorValue = '';
 }
 
 for (let i=0; i < numbers.length; i++){
@@ -51,42 +53,30 @@ for (let i=0; i < operators.length; i++){
 
 
 function calculate(){
+  let outcome;
   if (operatorValue === '+'){
     //what to return? a number or a string?
-    return Number(firstOperand)+Number(secondOperand);
+    outcome = Number(firstOperand) + Number(secondOperand);
+    display.value = outcome;
   }; 
 
   if (operatorValue === '-'){
-    return Number(firstOperand)-Number(secondOperand);
+    outcome = Number(firstOperand) - Number(secondOperand);
+    display.value = outcome
   };
   
   if (operatorValue === '/'){
-    return Number(firstOperand)/Number(secondOperand);
+    outcome = Number(firstOperand) / Number(secondOperand);
+    display.value = outcome
   };
 
   if (operatorValue === 'x'){
-    return Number(firstOperand)*Number(secondOperand);
+    outcome = Number(firstOperand) * Number(secondOperand);
+    display.value = outcome
   };
 };
 
 equalsButton.addEventListener('click', ()=>{
-  console.log('Home')
-  //what conditions should I check before calculating
-  if (!firstOperand && !operatorValue && !secondOperand){
-    const result = calculate();
-    console.log(result)
-    console.log("Hello world!")
-  } else if (!operatorValue && !secondOperand){
-    const result = calculate();
-    console.log(result)
-    console.log('You clicked me!!')
-
-  }
-  //how to display the result?
-  display.value = result.value
-  // what to reset?
+  calculate();
 });
-
-
-
 
