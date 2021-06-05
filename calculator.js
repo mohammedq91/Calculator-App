@@ -1,6 +1,6 @@
 const numbers = document.getElementsByClassName('number')
 const operators = document.getElementsByClassName('operator')
-const decimal = document.getElementsByClassName('dot')
+const decimalBtn = document.querySelector('.dot')
 const clearBtn = document.getElementById('clearBtn').addEventListener('click', reset)
 const display = document.getElementById('display')
 const equalsButton = document.querySelector('.equals')
@@ -9,7 +9,7 @@ display.value ="0"
 let firstOperand = '';
 let secondOperand = '';
 let operatorValue = '';
-let outcome;
+let outcome = 0;
 let decimalNumber = '.';
 
 function reset(e){
@@ -20,27 +20,28 @@ function reset(e){
   operatorValue = '';
 }
 
-for (i=0; i < decimal.length; i++){
-  const decimalNum = decimal[i];
-  decimalNum.addEventListener('click',function(e){
-    e.preventDefault();
+function decimalHandler(operand){
+  const numberArray = operand.split('');  // split method converts strings into array
+  if (numberArray.indexOf('.') === -1){  //if decimal value does not exist in number Array
+    numberArray.push('.');
+  };
+  return numberArray.join(''); // converts array back into string
+}
 
-    if (!decimalNumber){
-      
-    }
+decimalBtn.addEventListener('click',function(e){
+  e.preventDefault();
 
-    if (!firstOperand){
-      firstOperand = 0. + Number(firstOperand);
-      console.log('firstOperand is: ', firstOperand)
-    }; 
+  if (!operatorValue){
+    firstOperand = decimalHandler(firstOperand);
+    display.value = firstOperand;
 
-    if (firstOperand && operatorValue){
-      secondOperand = 0. + Number(secondOperand);
-      console.log('secondOperand is:', secondOperand)
-    };
+  } else if (firstOperand && operatorValue){
+    secondOperand = decimalHandler(secondOperand);
+    display.value = secondOperand;
+    console.log('secondOperand is:', secondOperand)
+  };
 
-  });
-};
+});
 
 
 for (let i=0; i < numbers.length; i++){
@@ -48,18 +49,19 @@ for (let i=0; i < numbers.length; i++){
   number.addEventListener('click', function(e) {
     e.preventDefault();
 
-    if (!firstOperand){  
+    if (!operatorValue){  
     //if there isn't 1st operand 
     //and number button/element was pressed then-->
-      firstOperand = number.textContent;
+      firstOperand += number.textContent;
       console.log('firstOperand is: ', firstOperand)
+      display.value = firstOperand;
 
-    }
-    if (firstOperand && operatorValue) {
-      secondOperand = number.textContent;
+    } else if (firstOperand && operatorValue) {
+      secondOperand += number.textContent;
       console.log('secondOperand is:', secondOperand)
+      display.value = secondOperand;
     };
-    display.value = number.textContent;
+    
 
   });
 };
@@ -70,27 +72,31 @@ for (let i=0; i < operators.length; i++){
   operator.addEventListener('click', function(e){
     e.preventDefault();
 
-    if (firstOperand && !operatorValue){
-      //if there was 1st operand and was NOT operator
-      // and operator button was pressed then -->
-      operatorValue = operator.textContent;
-    };
-
     if (firstOperand && operatorValue && secondOperand){ 
       // continuous functionality/operations.
       //if there were 1st Operand && 2nd Operand && operator
       // and operator button was pressed then -->
-      outcome = calculate();
-      display.value = outcome;
-      firstOperand = outcome;
+      result = calculate(firstOperand,operatorValue, secondOperand);
+      display.value = result;
+      firstOperand = result;
+      operatorValue = operator.textContent;
       secondOperand = ''
+      console.log('The operator is :', operatorValue)
+      
+    } else if (firstOperand){
+      //if there was 1st operand and was NOT operator
+      // and operator button was pressed then -->
+      operatorValue = operator.textContent;
+      console.log('The operator is :', operatorValue)
     };
+
+    
   });
   
 };
 
 
-function calculate(){
+function calculate(firstOperand,operatorValue, secondOperand){
   if (operatorValue === '+'){
     outcome = Number(firstOperand) + Number(secondOperand);
     console.log('the outcome is: ',outcome)
@@ -99,16 +105,19 @@ function calculate(){
 
   if (operatorValue === '-'){
     outcome = Number(firstOperand) - Number(secondOperand);
+    console.log('the outcome is: ',outcome)
     return outcome
   };
   
   if (operatorValue === '/'){
     outcome = Number(firstOperand) / Number(secondOperand);
+    console.log('the outcome is: ',outcome)
     return outcome
   };
 
   if (operatorValue === 'x'){
     outcome = Number(firstOperand) * Number(secondOperand);
+    console.log('the outcome is: ',outcome)
     return outcome
   };
 };
@@ -116,7 +125,7 @@ function calculate(){
 equalsButton.addEventListener('click', ()=>{
   //What condidtions to check before calculating?
   if(firstOperand && operatorValue && secondOperand){
-    display.value = calculate();
+    display.value = calculate(firstOperand,operatorValue, secondOperand);
     firstOperand = outcome;
     secondOperand = ''
   };
