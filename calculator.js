@@ -28,22 +28,33 @@ function decimalHandler(operand){
   return numberArray.join(''); // converts array back into string
 }
 
+
+
 decimalBtn.addEventListener('click',function(e){
   e.preventDefault();
 
   if (!operatorValue){
     firstOperand = decimalHandler(firstOperand);
     display.value = firstOperand;
+    
+
+    // function decimalRounder (firstOperand){
+    //   return Math.ceil(Number(firstOperand*1000)/1000);
+    // }
+    // decimalRounding(firstOperand);
 
   } else if (firstOperand && operatorValue){
     secondOperand = decimalHandler(secondOperand);
     display.value = secondOperand;
-    console.log('secondOperand is:', secondOperand)
   };
+
 
 });
 
 
+    
+
+ 
 for (let i=0; i < numbers.length; i++){
   const number = numbers[i];
   number.addEventListener('click', function(e) {
@@ -61,8 +72,6 @@ for (let i=0; i < numbers.length; i++){
       console.log('secondOperand is:', secondOperand)
       display.value = secondOperand;
     };
-    
-
   });
 };
 
@@ -101,21 +110,15 @@ function calculate(firstOperand,operatorValue, secondOperand){
     outcome = Number(firstOperand) + Number(secondOperand);
     console.log('the outcome is: ',outcome)
     return outcome;
-  }; 
-
-  if (operatorValue === '-'){
+  } else if (operatorValue === '-'){
     outcome = Number(firstOperand) - Number(secondOperand);
     console.log('the outcome is: ',outcome)
     return outcome
-  };
-  
-  if (operatorValue === '/'){
+  } else if (operatorValue === '/'){
     outcome = Number(firstOperand) / Number(secondOperand);
     console.log('the outcome is: ',outcome)
     return outcome
-  };
-
-  if (operatorValue === 'x'){
+  } else if (operatorValue === 'x'){
     outcome = Number(firstOperand) * Number(secondOperand);
     console.log('the outcome is: ',outcome)
     return outcome
