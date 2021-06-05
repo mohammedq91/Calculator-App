@@ -47,18 +47,14 @@ decimalBtn.addEventListener('click',function(e){
     secondOperand = decimalHandler(secondOperand);
     display.value = secondOperand;
   };
-
-
 });
-
-
-    
-
  
 for (let i=0; i < numbers.length; i++){
   const number = numbers[i];
   number.addEventListener('click', function(e) {
     e.preventDefault();
+
+    if (display.value.length === 10) return;
 
     if (!operatorValue){  
     //if there isn't 1st operand 
@@ -98,31 +94,37 @@ for (let i=0; i < operators.length; i++){
       operatorValue = operator.textContent;
       console.log('The operator is :', operatorValue)
     };
-
-    
   });
   
 };
 
+// function expression
+// const decimalRounder = function(outcome){
+//   return outcome.toFixed(3);
+// };
+
+//function declaration
+function decimalRounder(outcome){
+  return outcome.toFixed(3)
+}
+// arrow function 
+// const decimalRounder = (outcome) => outcome.toFixed(3);
 
 function calculate(firstOperand,operatorValue, secondOperand){
   if (operatorValue === '+'){
     outcome = Number(firstOperand) + Number(secondOperand);
     console.log('the outcome is: ',outcome)
-    return outcome;
   } else if (operatorValue === '-'){
     outcome = Number(firstOperand) - Number(secondOperand);
     console.log('the outcome is: ',outcome)
-    return outcome
   } else if (operatorValue === '/'){
     outcome = Number(firstOperand) / Number(secondOperand);
     console.log('the outcome is: ',outcome)
-    return outcome
   } else if (operatorValue === 'x'){
     outcome = Number(firstOperand) * Number(secondOperand);
     console.log('the outcome is: ',outcome)
-    return outcome
   };
+  return decimalRounder(outcome);
 };
 
 equalsButton.addEventListener('click', ()=>{
