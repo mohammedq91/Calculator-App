@@ -13,4 +13,4 @@ This project was written in HTML, JavaScript, and CSS. The purpose of this app w
 
 ## Author
 
-- **Mohammed Qaralos** - *Self taught Software Developer* - [Website]() | [LinkedIn](https://www.linkedin.com/in/mohammed-qaralos-27151010a/)
+- **Mohammed Qaralos** - *Self taught Software Developer* - [LinkedIn](https://www.linkedin.com/in/mohammed-qaralos-27151010a/)
