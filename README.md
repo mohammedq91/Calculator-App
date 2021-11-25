@@ -4,7 +4,7 @@
 
 #### Play it [here](https://mohammedq91.github.io/Calculator-App/)
 
-![Calculator Photo](CalculatorPhoto.png)
+![Calculator Photo](CalculatorPhoto.png/400/400)
 
 ## Summary
 This project was written in HTML, JavaScript, and CSS. The purpose of this app was to help me to further enhance my JavaScript skills. I learned how to grab one HTML element from an HTML collection, node list of HTML element, Node list forEach method, looping through an array element by element, split strings into array then convert arrays back to strings, adding two numbers, continuous functions, apply decimals when pressed, convert strings to numbers, display at least 10 digits on the screen, and display decimals to at least the thousandth.
